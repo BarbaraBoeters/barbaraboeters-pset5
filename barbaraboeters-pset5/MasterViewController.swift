@@ -11,9 +11,8 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    // var objects = [Task]()
+    var objects = [TodoList]()
     
-    // private let db = DatabaseHelper()
     // private var selectedTodo: Int?
     // var checked = [Bool]()
 
@@ -47,14 +46,11 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let task = TaskStore.sharedInstance.get(index: indexPath.row)
-                print(task)
-                // (segue.destination as! DetailViewController).detailItem = task
+                let task = ToDoManager.sharedInstance.readList(index: indexPath.row)
+                // print(task)
                 //(segue.destination as! DetailViewController).detailItem = task
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = task
-//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-//                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -66,17 +62,16 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TaskStore.sharedInstance.count
+        return ToDoManager.sharedInstance.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        let task = TaskStore.sharedInstance.get(index: indexPath.row)
-        cell.textLabel?.text = task.title
-        cell.detailTextLabel?.text = task.notes
+        let task = ToDoManager.sharedInstance.readList(index: indexPath.row)
+        cell.textLabel?.text = task.name
+        // cell.detailTextLabel?.text = taskDetail.name
         return cell
     }
-
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -85,7 +80,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            TaskStore.sharedInstance.removeTaskAtIndex(index: indexPath.row)
+            ToDoManager.sharedInstance.deleteList(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

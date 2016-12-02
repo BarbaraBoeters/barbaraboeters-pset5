@@ -6,13 +6,12 @@
 //  Copyright © 2016 Barbara Boeters. All rights reserved.
 //
 
-//import Foundation
-//import SQLite
+import Foundation
+import SQLite
 
-//class DatabaseHelper {
-//    static let instance = DatabaseHelper()
-//    private var db: Connection?
-//    
+class DatabaseHelper {
+    private var db: Connection?
+    
 //    private let list = Table("list")
 //    // private let id = Expression<Int64>("id")
 //    // private let listId = Expression<Int64>("listId")
@@ -101,3 +100,4 @@
 //        }
 //    }
 
+}

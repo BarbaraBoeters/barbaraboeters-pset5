@@ -1,18 +1,17 @@
 //
-//  AddTaskViewController.swift
+//  AddItemViewController.swift
 //  barbaraboeters-pset5
 //
-//  Created by Barbara Boeters on 01-12-16.
+//  Created by Barbara Boeters on 02-12-16.
 //  Copyright © 2016 Barbara Boeters. All rights reserved.
 //
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+class AddItemViewController: UIViewController {
 
-    @IBOutlet weak var titleField: UITextField!
-
-
+    @IBOutlet weak var itemField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,10 +25,12 @@ class AddTaskViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dismissAndSave" {
-            ToDoManager.sharedInstance.createList(list: titleField.text!)
+            let task = TodoList(name: itemField.text!)
+//            ToDoManager.sharedInstance.toDoLists.append(TodoList(name: itemField.text!))
+            ToDoManager.sharedInstance.toDoLists.append(task)
+            // TodoList.addNewToDoItem(task)
         }
     }
-    
 
     /*
     // MARK: - Navigation

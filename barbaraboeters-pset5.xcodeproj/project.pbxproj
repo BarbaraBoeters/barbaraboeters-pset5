@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		1A469CAC1DF0BE4A00CFB010 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CAB1DF0BE4A00CFB010 /* AddTaskViewController.swift */; };
 		1A469CAE1DF0BFCA00CFB010 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CAD1DF0BFCA00CFB010 /* DismissSegue.swift */; };
-		1A469CB01DF0C3B500CFB010 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CAF1DF0C3B500CFB010 /* Task.swift */; };
 		1A469CB21DF0C40000CFB010 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CB11DF0C40000CFB010 /* TaskStore.swift */; };
+		1A469CB71DF18FFD00CFB010 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CB61DF18FFD00CFB010 /* TodoItem.swift */; };
+		1A469CB91DF1900800CFB010 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CB81DF1900800CFB010 /* TodoList.swift */; };
+		1A469CBB1DF1907F00CFB010 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CBA1DF1907F00CFB010 /* TodoManager.swift */; };
+		1A469CC21DF1BE8600CFB010 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CC11DF1BE8600CFB010 /* CustomCell.swift */; };
+		1A469CC41DF1DA0900CFB010 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CC31DF1DA0900CFB010 /* AddItemViewController.swift */; };
+		1A469CC61DF1EC5700CFB010 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1A469CC51DF1EC5700CFB010 /* README.md */; };
 		1AD48A0F1DEC6114004B4CAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48A0E1DEC6114004B4CAA /* AppDelegate.swift */; };
 		1AD48A111DEC6114004B4CAA /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48A101DEC6114004B4CAA /* MasterViewController.swift */; };
 		1AD48A131DEC6114004B4CAA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD48A121DEC6114004B4CAA /* DetailViewController.swift */; };
@@ -76,8 +81,13 @@
 /* Begin PBXFileReference section */
 		1A469CAB1DF0BE4A00CFB010 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		1A469CAD1DF0BFCA00CFB010 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
-		1A469CAF1DF0C3B500CFB010 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1A469CB11DF0C40000CFB010 /* TaskStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
+		1A469CB61DF18FFD00CFB010 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		1A469CB81DF1900800CFB010 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		1A469CBA1DF1907F00CFB010 /* TodoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
+		1A469CC11DF1BE8600CFB010 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1A469CC31DF1DA0900CFB010 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		1A469CC51DF1EC5700CFB010 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		1AD48A0B1DEC6114004B4CAA /* barbaraboeters-pset5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "barbaraboeters-pset5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD48A0E1DEC6114004B4CAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AD48A101DEC6114004B4CAA /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 		1AD48A021DEC6114004B4CAA = {
 			isa = PBXGroup;
 			children = (
+				1A469CC51DF1EC5700CFB010 /* README.md */,
 				1AD48AD81DEDB41B004B4CAA /* SQLite.xcodeproj */,
 				1AD48A0D1DEC6114004B4CAA /* barbaraboeters-pset5 */,
 				1AD48A0C1DEC6114004B4CAA /* Products */,
@@ -125,15 +136,19 @@
 				1AD48A0E1DEC6114004B4CAA /* AppDelegate.swift */,
 				1AD48A101DEC6114004B4CAA /* MasterViewController.swift */,
 				1AD48A121DEC6114004B4CAA /* DetailViewController.swift */,
+				1A469CC11DF1BE8600CFB010 /* CustomCell.swift */,
 				1AD48A141DEC6114004B4CAA /* Main.storyboard */,
+				1A469CC31DF1DA0900CFB010 /* AddItemViewController.swift */,
 				1A469CAD1DF0BFCA00CFB010 /* DismissSegue.swift */,
 				1A469CAB1DF0BE4A00CFB010 /* AddTaskViewController.swift */,
-				1A469CAF1DF0C3B500CFB010 /* Task.swift */,
-				1A469CB11DF0C40000CFB010 /* TaskStore.swift */,
+				1A469CBA1DF1907F00CFB010 /* TodoManager.swift */,
+				1A469CB81DF1900800CFB010 /* TodoList.swift */,
+				1A469CB61DF18FFD00CFB010 /* TodoItem.swift */,
 				1AD48AF11DEDBE74004B4CAA /* DatabaseHelper.swift */,
 				1AD48A171DEC6114004B4CAA /* Assets.xcassets */,
 				1AD48A191DEC6114004B4CAA /* LaunchScreen.storyboard */,
 				1AD48A1C1DEC6114004B4CAA /* Info.plist */,
+				1A469CB11DF0C40000CFB010 /* TaskStore.swift */,
 			);
 			path = "barbaraboeters-pset5";
 			sourceTree = "<group>";
@@ -284,12 +299,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A469CAC1DF0BE4A00CFB010 /* AddTaskViewController.swift in Sources */,
-				1A469CB01DF0C3B500CFB010 /* Task.swift in Sources */,
+				1A469CB71DF18FFD00CFB010 /* TodoItem.swift in Sources */,
 				1AD48A131DEC6114004B4CAA /* DetailViewController.swift in Sources */,
 				1AD48AF21DEDBE74004B4CAA /* DatabaseHelper.swift in Sources */,
+				1A469CC61DF1EC5700CFB010 /* README.md in Sources */,
+				1A469CB91DF1900800CFB010 /* TodoList.swift in Sources */,
+				1A469CC41DF1DA0900CFB010 /* AddItemViewController.swift in Sources */,
 				1A469CB21DF0C40000CFB010 /* TaskStore.swift in Sources */,
 				1AD48A111DEC6114004B4CAA /* MasterViewController.swift in Sources */,
 				1A469CAE1DF0BFCA00CFB010 /* DismissSegue.swift in Sources */,
+				1A469CBB1DF1907F00CFB010 /* TodoManager.swift in Sources */,
+				1A469CC21DF1BE8600CFB010 /* CustomCell.swift in Sources */,
 				1AD48A0F1DEC6114004B4CAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

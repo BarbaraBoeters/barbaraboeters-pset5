@@ -7,38 +7,38 @@
 //
 // TODOMANAGER
 
-import Foundation
-
-class TaskStore {
-    class var sharedInstance: TaskStore {
-        struct Static {
-            static let instance = TaskStore()
-        }
-        return Static.instance
-    }
-    
-    var tasks: [Task] = []
-    
-    var count: Int {
-        return tasks.count
-    }
-    
-    func add (task: Task) {
-        tasks.append(task)
-    }
-    
-    func replace(task: Task, atIndex index: Int) {
-        tasks[index] = task
-    }
-    
-    func get(index: Int) -> Task {
-        return tasks[index]
-    }
-    
-    func removeTaskAtIndex(index: Int) {
-        tasks.remove(at: index)
-    }
-}
+//import Foundation
+//
+//class TaskStore {
+//    class var sharedInstance: TaskStore {
+//        struct Static {
+//            static let instance = TaskStore()
+//        }
+//        return Static.instance
+//    }
+//    
+//    var tasks: [Task] = []
+//    
+//    var count: Int {
+//        return tasks.count
+//    }
+//    
+//    func add (task: Task) {
+//        tasks.append(task)
+//    }
+//    
+//    func replace(task: Task, atIndex index: Int) {
+//        tasks[index] = task
+//    }
+//    
+//    func get(index: Int) -> Task {
+//        return tasks[index]
+//    }
+//    
+//    func removeTaskAtIndex(index: Int) {
+//        tasks.remove(at: index)
+//    }
+//}
 
 
 //// A singleton class that groups some common functionality. It contains the list of TodoLists for your application, and it has two functions that are responsible for persistence of the lists between application runs: readTodos and writeTodos.
